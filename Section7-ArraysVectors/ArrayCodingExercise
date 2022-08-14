@@ -1,0 +1,20 @@
+// Section 7 - Coding Exercise
+
+#include <iostream>
+
+using namespace std;
+
+vector<int> use_array() {
+
+    // My code below
+    
+    int arr [10] {0};
+    
+    arr[0] = 100;
+    arr[9] = 1000;
+    
+    // my code above
+    
+    vector<int> v(arr, arr + sizeof arr / sizeof arr[0]);
+    return v;
+}

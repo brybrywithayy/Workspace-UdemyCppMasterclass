@@ -1,0 +1,18 @@
+// Section 7 - Vector Coding Exercise
+
+#include <vector>
+using namespace std;
+
+vector <int> use_vector() {
+
+    // my code below
+    
+    vector <int> vec {10,20,30,40,50};
+    
+    vec.at(0) = 100;
+    vec.at(4) = 1000;
+    
+    // my code above
+    
+    return vec;
+}

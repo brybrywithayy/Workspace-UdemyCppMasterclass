@@ -1,0 +1,201 @@
+SECTION 7 - ARRAYS AND VECTORS
+
+    - Arrays
+        - What are arrays?
+            - compound datatype also called data structure
+                - collection of elements
+                    Ex: array of integers (test scores, etc)
+                - all elements are of the same datatype
+                - each element can be accessed directly
+                
+        - Why do we use them?
+            - Better organize large amounts of data
+                - tell compiler to give collection of specified number of elements
+                  all under the same name
+                  
+        - Characteristics of Arrays
+            - Fixed size (cannot be changed while program is running)
+            - Elements are all the same datatype
+                - very efficient data structures
+            - Stored contiguously in memory
+            - individual elements accessed by their position (index)
+                - First element is at index 0
+                - Last element is at index size-1
+                    - Ex: array of 10 elements will be numbered 0-9
+                - C++ arrays are NOT bounds checked
+                    - must be sure that you do not go over bounds
+                
+        - Declaration and initialization of arrays
+            - ALWAYS initialize arrays, otherwise they will contain unknown values
+            - Syntax for DECLARATION:
+                Element_Type array_name [fixedNumOfElements];
+                
+                    Examples:
+                        int test_scores [5];
+                        
+                        int high_score_per_level [10];
+                        
+                        const int days_in_year {365};
+                        double hi_temps [days_in_year];
+                        
+            - Syntax for Initialization:
+                Element_Type array_name [numberOfElements] {init list};
+                
+                    Examples:
+                        int test_scores [5] {100,95,99,87,88};
+                        
+                        int high_score_per_level [10] {3,5};  // init to 3, 5 and 0 for the rest
+                        
+                        const double days_in_year {365};
+                        double hi_temperatures [days_in_year] {0}; // init all to 0
+                        
+                        int another_array [] {1,2,3,4,5};  // size automatically calculated from elements
+        
+        - Accessing array elements
+            - Syntax for accessing elements
+                array_name [element_index]
+                
+                Ex:
+                    cout << "First test score at index 0: " << test_scores[0] << endl;
+                    
+        - Changing contents of array elements
+            - Syntax:
+                test_scores[0] = 90;  // assigns value of 90 to index 0
+                // OR
+                cin >> test_scores[0];  // allows console input to assign new value to index 0
+        
+        - How Do Arrays Work Behind the Scenes?
+            - name of the array represents the location (memory address) of the first element in the array
+            - the index represents the offset from the beginning of the array
+            - C++ simply calculates to find the correct element
+                - but it has no bounds checking
+                
+    - Multi-dimensional arrays
+        - Usually 2 or 3 dimension but can be more
+            - Models grids and boards
+        - Declaring multi-dimensional arrays
+            Syntax
+                Element_Type array_name [dim1_size][dim2_size]
+                    
+                    Example:
+                        int movie_rating [3][4];  // 3 rows and 4 columns = 12 integers total
+                        
+                    Real example:
+                    
+                        const int rows {3};
+                        const int cols {4};
+                        int movie_rating [rows][cols];
+                        
+                        visualization of the array:
+                        col     0   1   2   3
+                        row 0   0   4   3   5
+                            1   2   3   3   5
+                            2   1   4   4   5
+                            
+         - Accessing array elements in these arrays
+            Syntax is the same as with 1D array
+            
+                        Initializing the above 2D array
+                        
+                        int movie_rating [3][4]
+                        {
+                            { 0, 4, 3, 5},
+                            { 2, 3, 3, 5},
+                            { 1, 4, 4, 5}
+                        };
+                        
+                        
+    - Vectors
+        - What are vectors?
+            - dynamic arrays that can be resized
+            - Container in the C++ Standard Template Library
+                - its an array that can grow and shrink at execution time
+                - provides similar semantics and syntax as arrays
+                - very efficient
+                - does not check by default BUT can provide bounds checking
+                - has functions that sort, reverse, find, etc.
+                
+        - Advantages v arrays
+            - much more useful than arrays because they are dynamic in size
+            - arrays are rarely used over vectors in Modern C++
+        
+        - Declaration
+            - Several ways
+                1) Example:
+                        #include <vector>  // import library
+                        using namespace std;  // either this or std::vector
+                        
+                        vector <char> vowels;
+                        
+                        vector <int> test_scores;
+                        
+                2) Example using CONSTRUCTOR INITIALIZATION SYNTAX
+                    - automatically sets each element to 0
+                        vector <char> vowels (5);
+                        
+                        vector <int> test_scores (10);
+        - Accessing Vector Elements
+            - Array Syntax still works
+            
+                    vector_name[element_index]
+                    
+                    Ex:
+                        vector <int> test_scores {100,95,99,87,88};
+                        
+                        cout << "First score, index0 " << test_scores[0] << endl;
+                        cout << "Second score, index1 " << test_scores[1] << endl;
+                        cout << "Third score, index2 " << test_scores[2] << endl;
+                        cout << "Fourth score, index3 " << test_scores[3] << endl;
+                        
+            - Vector Syntax (does check bounds)
+                - object oriented approach to use vector class and its methods
+                    
+                    vector_name.at(element_index)
+                    
+                    Ex: 
+                        test_scores.at(1)
+                        
+                    Ex2:
+                        vector <int> test_scores {100,95,99,87,88};
+                        
+                        cout << "First score, index0: " << test_scores.at(0) << endl;
+                        cout << "Second score, index1: " << test_scores.at(1) << endl;
+                        cout << "Third score, index2: " << test_scores.at(2) << endl;
+                        cout << "Fourth score, index3: " << test_scores.at(3) << endl;
+                        cout << "Fifth score, index4: " << test_scores.at(4) << endl;
+            
+                    Ex3: (assignment)
+                        vector <int> test_scores {100,95,99,87,88};
+                        
+                        cin >> test_scores.at(0);
+                        cin >> test_scores.at(1);
+                        cin >> test_scores.at(2);
+                        cin >> test_scores.at(3);
+                        cin >> test_scores.at(4);
+                        
+                        test_scores.at(0) - 90;  // assignment statement
+
+        - Dynamic Sizing of Vectors
+            
+            - Adding elements to resize the vector
+            
+                Syntax:
+                    vector_name.push_back(element)
+                    
+                Ex:
+                    vector <int> test_scores (100,95,99)    // size is 3
+                    
+                    test_scores.push_back(80);  // 100,95,99,80
+                    test_scores.push_back(90);  // 100,95,99,80,90
+                    
+                    // automatically adding required space
+                        
+        - Out of Bounds Exceptions
+            - vector methods CAN provide bounds checking
+            - an exception and error message is generated
+            - exception handling can prevent crashes in production code 
+
+
+
+
+
