@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Section8Workspace" Database="" Version="10000">
+  <Project Name="AssignmentOperator" Path="AssignmentOperator/AssignmentOperator.project" Active="No"/>
+  <Project Name="ArithmeticOperators" Path="ArithmeticOperators/ArithmeticOperators.project" Active="No"/>
+  <Project Name="EurosToDollars" Path="EurosToDollars/EurosToDollars.project" Active="No"/>
+  <Project Name="FarhToCelcius" Path="FarhToCelcius/FarhToCelcius.project" Active="No"/>
+  <Project Name="IncrementDecrementOperator" Path="IncrementDecrementOperator/IncrementDecrementOperator.project" Active="No"/>
+  <Project Name="MixedExpressionsCasting" Path="MixedExpressionsCasting/MixedExpressionsCasting.project" Active="No"/>
+  <Project Name="EqualityOperators" Path="EqualityOperators/EqualityOperators.project" Active="No"/>
+  <Project Name="RelationalOperators" Path="RelationalOperators/RelationalOperators.project" Active="No"/>
+  <Project Name="LogicalOperators" Path="LogicalOperators/LogicalOperators.project" Active="No"/>
+  <Project Name="Section8Challenge" Path="Section8Challenge/Section8Challenge.project" Active="No"/>
+  <Project Name="Question7Quiz" Path="Question7Quiz/Question7Quiz.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="AssignmentOperator" ConfigName="Debug"/>
+      <Project Name="ArithmeticOperators" ConfigName="Debug"/>
+      <Project Name="EurosToDollars" ConfigName="Debug"/>
+      <Project Name="FarhToCelcius" ConfigName="Debug"/>
+      <Project Name="IncrementDecrementOperator" ConfigName="Debug"/>
+      <Project Name="MixedExpressionsCasting" ConfigName="Debug"/>
+      <Project Name="EqualityOperators" ConfigName="Debug"/>
+      <Project Name="RelationalOperators" ConfigName="Debug"/>
+      <Project Name="LogicalOperators" ConfigName="Debug"/>
+      <Project Name="Section8Challenge" ConfigName="Debug"/>
+      <Project Name="Question7Quiz" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="AssignmentOperator" ConfigName="Release"/>
+      <Project Name="ArithmeticOperators" ConfigName="Release"/>
+      <Project Name="EurosToDollars" ConfigName="Release"/>
+      <Project Name="FarhToCelcius" ConfigName="Release"/>
+      <Project Name="IncrementDecrementOperator" ConfigName="Release"/>
+      <Project Name="MixedExpressionsCasting" ConfigName="Release"/>
+      <Project Name="EqualityOperators" ConfigName="Release"/>
+      <Project Name="RelationalOperators" ConfigName="Release"/>
+      <Project Name="LogicalOperators" ConfigName="Release"/>
+      <Project Name="Section8Challenge" ConfigName="Release"/>
+      <Project Name="Question7Quiz" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

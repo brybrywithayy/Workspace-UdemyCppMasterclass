@@ -1,0 +1,219 @@
+SECTION 8 - STATEMENTS AND OPERATORS
+
+    Expressions
+    
+        - most basic building blocks of programs
+        - "a sequence of operators and operands that specifies a computation"
+        - computes a value from a number of operands
+        
+            Examples:
+                34                  // literal
+                favorite_number     // variable
+                1.5 + 2.8           // addition
+                2 * 5               // multiplication
+                a > b               // relational
+                a = b               // assignment
+    
+    Mixed Type Expressions
+    
+        - C++ operations must occur on operands of the same datatype
+        - if operands are of different types, one will be converted
+            NOTE: this can affect calculation results!
+        - C++ will attempt to automatically convert types (coercion)
+            - will throw compiler error if it cannot
+            
+        Higher v Lower Types
+        
+            - based on the size of the value range that the type can hold
+            	- Long double, double, float, unsigned long, long, unsigned int, int
+            	- short and char are always converted to ints
+            	
+            - Type Coercion: conversion of one operand to another data type
+            	- Promotion: conversion to higher type
+            		- used in mathematical expressions
+            	- Demotion: conversion to lower type
+            		- used with assignment to lower type
+            		
+            		Example:
+            			lower promoted to higher
+            			
+            			2 * 5.2      // 2 (int) will be promoted to 2.0 (double)
+            			
+            			higher demoted to lower (possible loss of precision)
+            			
+            			int num {0};
+            			num = 100.2;  // loss of precision will result 100.2 -> 100
+            			
+            - Can explicitly convert (CAST) from one type to another
+            	
+            	- Explicit type casting 
+            		- Syntax: 
+            			static_cast<type>
+            			
+            		Example:
+            			
+            			int total_amount {100};
+            			int total_number {8};
+            			double average {0.0};
+            			
+            			average = total_amount / total_number;
+            			cout << average << endl;	// outputs 12 - integer division
+            			
+            			// by casting one variable to a double, the compiler will 
+            			// coerce the other into a double
+            			
+            			average = static_cast<double>(total_amount) / total_number;
+            			cout << average << endl;	// outputs 12.5
+    
+    Statements and block statements
+    
+        - a complete line of code that performs some action
+        - usually terminated with a semi-colon
+        - usually contain expressions
+        - C++ has many types of statements
+            - expression, null, compound, selection, iteration, declaration,
+              jump, try blocks, and others
+              
+            Examples:
+                int x;                  // declaration
+                favorite_number = 12;   // assignment
+                1.5 * 2.8;              // expression with terminator;
+                x = 2 * 5;              // assignment
+                ;                       // null statement
+                if (a > b) cout << "a is greater than b"; // if statement
+    
+    Operators
+    
+        C++ has a rich set of operators
+            - unary - operates on only 1 operand
+            - binary - 2 operands (most are this)
+            - ternary - 3 operands (conditional)
+            
+        - Common operators can be grouped as follows
+        
+            - assignment
+                - assign new value to an variable/object
+                - C++ is staticly typed so the compiler will type check 
+                
+            - Compound Assignment
+                - assigns new value to variable/object ACCOUNTING FOR EXISTING VALUE
+                
+                OPERATOR    MEANING
+                +=          lhs = lhs + (rhs);
+                -=          lhs = lhs - (rhs);
+                *=          lhs = lhs * (rhs);
+                /=          lhs = lhs / (rhs);
+                %=          lhs = lhs % (rhs);
+                >>=         lhs = lhs >> (rhs);  // bitwise
+                <<=         lhs = lhs << (rhs);  // bitwise
+                &=          lhs = lhs & (rhs);   // bitwise
+                ^=          lhs = lhs ^ (rhs);   // bitwise
+                |=          lhs = lhs | (rhs);   // bitwise
+                
+                    Ex:
+                        a += 1;        // a = a + 1;
+                        a /= 5;        // a = a / 5;
+                        a *= b + c;    // a = a * (b + c);
+                        
+                        cost += items * tax;    // cost = cost + (items * tax);
+                
+            - arithmetic
+                - perform mathematical operations
+                	+, -, *, /, %
+                	
+            - increment and decrement
+                - partly work as assignment
+                - partly like arithmetic
+                	Ex:
+                		++num   // prefix, increments first then assigns
+                		num++   // postfix, assigns first, then increments
+                		
+            - relational
+                - comparison operators
+                - includes ==, !=, <, >, <=, >=
+                	- binary operators (require 2 operands)
+                	- evaluate to boolean (true/false, 1/0)
+                - used commonly in control flow statements
+                	Ex:
+                		expr1 == expr2
+                		expr1 != expr2
+                		
+                		100 == 200	// false
+                		num1 != num2
+                		
+                	Ex2:
+                		bool result {false};
+                		result = (100 == 50+50);
+                		result = (num1 != num2);
+                		
+                		cout << (num1 == num2) << endl;  // evaluates to 0 or 1
+                		cout << std::boolalpha;	  // changes to output text
+                		cout << (num1 == num2) << endl;  // evaluates to false or true
+                		cout << std::noboolalpha;	  // changes back to 0 or 1
+                		
+            - logical
+                - work on boolean values and evaluate to booleans
+                
+                    not !       // negation
+                    and &&      // logical AND
+                    or ||       // logical OR
+                    
+                - Precedence:
+                    not > and > or
+                    
+                    not is a unary operator
+                    and, or are binary operators
+                    
+                    Note: can use keyword Syntax for not, and, or to express these operators
+                        **Rarely if ever seen with keywords in the wild**
+                        
+                      Ex1:
+                            num1 >= 10 && num1 < 20
+                            num1 <= 10 || num1 >= 20
+                            
+                            !is_raining && temperature > 32.0
+                            
+                            is_raining || is_snowing
+                            
+                            temperature > 100 && is_humid || is_raining
+                            
+                - Short-Circuit Evaluation
+                    As soon as a result is known, the compiler will STOP evaluating
+                    the rest of the logical expression
+                    
+                    Ex:
+                    
+                        expr1 && expr2 && expr3     // can exit as soon as 1 is false
+                        expr1 || expr2 || expr3     // can exit as soon as 1 is true
+                        
+            - member access
+                - array subscript is an example
+                - pointers
+            - other
+            
+            
+            - Operator Precedence in C++
+                - very strict rules
+                - complete tables available in documentation
+                
+                - Associativity
+                    - use precedence rules when adjacent operators are different
+                    
+                        expr1 op1 expr2 op2 expr3   // precedence
+                        
+                    - use associativity rules when adjacent have the same precedence
+                        
+                        expr1 op1 expr2 op1 expr3   // associativity
+                        
+                    - as with PEMDAS, use parenthesis to remove an doubt
+                    
+                        Examples:
+                            
+                            result = num1 + num2 * num3;
+                            result = (num1 + (num2 * num3));  // what precedence looks like
+                            
+                            result1 = num1 + num2 - num3;
+                            result1 = ((num1 + num2) - num3); // eval left->right 
+                    
+                    
+                    

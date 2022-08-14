@@ -1,0 +1,25 @@
+// Arithmetic Operators - Section 8 Coding Exercise
+
+#include <iostream>
+using namespace std;
+
+int arithmetic_operators(int number) {
+
+    int original_number {number};
+    
+    // my code below
+    
+    number = number * 2;  // multiply the number by 2 and save it back to number
+    
+    number = number + 9;  // add 9 to the number and reassign it
+    
+    number = number - 3;  // subtract 3 from the number and reassign it
+    
+    number = number / 2;  // divide the number by 2 and reassign it
+    
+    number = number - original_number;  // subtract the original number from the number
+    
+    number = number % 3;  // get the remainder of the number divided by 3 and save it
+    
+    return number;
+}
