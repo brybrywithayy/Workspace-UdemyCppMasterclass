@@ -1,0 +1,17 @@
+CODING EXERCISE ONE - DECLARING AND INITIALIZING VARIABLES
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void employee_profile() {
+
+	// my code below
+	int age {0};
+	string name {""};
+	double hourly_wage {23.50};
+
+	cin >> name >> age;
+	
+	cout << name << " " << age << " " << hourly_wage;
+}

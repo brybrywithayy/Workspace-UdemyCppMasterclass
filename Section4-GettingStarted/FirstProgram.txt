@@ -1,0 +1,38 @@
+CodeLite tour
+
+First program and possible issues in programming
+Building
+Running
+Warnings
+Errors
+
+How to Build a Program
+
+- Source code
+- COMPILE - checks source for errors and creates .obj files (binaries)
+- BUILD - both compiles and links dependencies and outputs an exe
+- CLEAN - removes .object and .exe files and takes project back to clean state with JUST source code
+
+ERRORS in Build Process
+- Compiler Errors
+	- Compiler strictly enforces programming language rules
+	- Syntax errors!
+		- when something is wrong with the structure
+		- missing ; for instance
+	- Semantic errors
+		- when something is wrong with the meaning
+		- a + b; when these are two different data types, etc.
+- Compiler Warnings
+	- Don't just ignore these!!!
+	- compiler can still generate object code from source
+- Linker Errors
+	- linker error is when program is missing an object file or library
+	- linker takes compiled source code and links it with any external libraries
+- Runtime Errors
+    - problem that takes place when the program is successfully executing
+    - Ex: out of memory, file not found, divide by zero
+    - exception handling is the appropriate way to deal with these errors
+- Logic Errors
+    - bugs in code that cause incorrect outputs in an executed program
+    - many causes including incomplete information, errors added by another programmer, etc.
+    - testing and debugging is the appropriate way to deal with these errors

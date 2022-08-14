@@ -1,0 +1,22 @@
+Using Command-Line Interface instead of IDE
+
+Requirements:
+- text editor (notepad, etc)
+- command prompt or terminal
+- installed C++ compiler
+
+Why Do This?
+- no IDE
+- simple, efficient workflow
+- better for experienced users
+- better for limited hardware resources
+
+Things to Remember:
+- You have to organize your own directory structure
+- compiler manually with g++ (Windows)
+	- cd "change directory"
+	- dir "list directory contents
+	- Compile: g++ -Wall -std=c++14 <filename.cpp>
+		OR g++ -Wall -std=c++14 <filename.cpp> -o <executableName.exe>
+	- will create a .exe file
+	- Run: just type filename.cpp in terminal

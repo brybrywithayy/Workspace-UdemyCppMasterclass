@@ -1,0 +1,125 @@
+Structure of a C++ Program
+
+Basic Components
+    - Keywords:
+        - most languages have reserved keywords that have specific predetermined meanings and cannot be reused
+        - C++ has about 90 keywords (Java about 50, C has 32, Python has 33)
+        
+    - Identifier is not a keyword
+        - these are named by the programmer
+        
+Preprocessor Directives
+    - What is the preprocessor?
+        - program that processes source code before compiler gets it
+    - What does it do?
+        1) replaces all comments with a single space
+        2) looks for directives that start with #
+            - replaces the include line with the file it refers to
+        3) When the compiler gets the source, it is ready to go
+    - Preprocessors can do conditional compilation (if OS specific for instance)
+
+main() function
+    - EVERY C++ program MUST have ONLY ONE main() function somewhere
+    - it is the starting point for the program's execution
+    - main() will be called by the OS when the program is executed
+    - main()'s return type is int
+        - return 0 = successful program execution
+        - if return value is something else, OS can check value returned to 
+            determine what went wrong
+    2 Ways to Write main():
+        1) int main() without args
+            - program is called without arguments
+        2) int main(int argc, char *argv[])
+            - program is called with arguments
+            - argc is the number of arguments that will be passed into the program
+            - argv are the actual arguments (data)
+
+Namespaces
+    - programs are a combination of your code, C++ standard library, and 3rd party programmer's code
+    - naming conflict results when two libraries use the same name for different functions
+        - compiler will not know how to handle this
+    THREE WAYS TO USE NAMESPACES
+    1) Explicit = namespace comes before the function call
+        - Ex: std::cout
+                std = standard library
+                :: scope resolution operator
+                cout = "c out"
+    2) Directive = Use entire std namespace
+        Ex:
+           using namespace std;> before main() function
+    3) Qualified = use specific std
+        Ex:
+        using std::cout;
+        using std::cin;
+        using std::endl;
+
+Comments
+    - Used for explanation, notes, annotations
+    - Add meaning to what the program is doing
+    - these will NEVER be seen by the compiler - written only for the humans
+    - 2 Types in C++
+        - single line comment: 
+            // This is a comment
+        - multi-line comment:
+            /* multi
+                line
+                comment
+            */
+    Notes on Comments:
+        Code should be self-documenting - literate programming
+        Comments can explain efficiency tweaks, complex algorithms, etc
+
+Basic Input/output (I/O)
+    - cout, cin, cerr, clog are objects representing streams
+    - cout
+        - standard output stream
+        - prints to console
+        - uses << insertion operator to print to console
+    - cin
+        - standard input stream
+        - keyboard
+        - uses >> extraction operator to take data from keyboard inputs
+        
+        
+    COUT AND <<
+        - insert data into the cout stream
+                cout << data;
+        
+        - can be chained
+                cout << "data 1 is " << data1;
+            
+        - does not automatically add line breaks
+                cout << "data 1 is " << data1 << endl;
+                cout << "data 1 is " << data1 << "\n";
+        Note: endl will flush the buffer
+        
+    CIN AND >>
+        - extracts data from the cin stream based on data type
+                cin >> data;
+                
+        - can also be chained
+                cin >> data1 >> data2;
+                
+        - can fail if data entered cannot be interpreted
+            - if it is undetermined value or data input is wrong type
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            

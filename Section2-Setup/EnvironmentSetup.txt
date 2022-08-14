@@ -1,0 +1,7 @@
+SETUP For UDEMY C++ Programming
+
+C++ Compiler
+	Mingw-w64
+CodeLite IDE
+	Configure CodeLite
+	Create default CodeLite project template

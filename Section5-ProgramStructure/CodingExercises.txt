@@ -1,0 +1,43 @@
+EXERCISE ONE
+
+#include <iostream>
+using namespace std;
+
+void say_hi() {
+
+    // my code below
+
+    cout << "Hi Frank!";
+    
+}
+
+EXERCISE TWO
+
+#include <iostream>
+using namespace std;
+
+void sallys_dogs() {
+
+    int x {3};
+    
+    // my code below
+    
+    cout << "Sally has " << x << " dogs.";
+    
+}
+
+EXERCISE THREE
+
+#include <iostream>
+using namespace std;
+
+void date_of_birth() {
+    int m {};
+    int d {};
+    int y {};
+    
+    // my code below
+    
+    cin >> m >> d >> y;
+    
+    cout << "Birthday is " << m << " " << d << " " << y;

@@ -1,0 +1,36 @@
+C++ Programming - Beginner to Beyond (UDEMY)
+
+Modern C++
+
+Why Learn C++?
+	It's still a widely used language
+	Fast, flexible, scalable, portable
+	Supports procedural and OOP 
+	Huge number of Git repositories
+	Large titles such as Windows, Linux, Mac OSX, Photoshop, MySQL
+
+C++ = Salary++
+
+Evolution of C++
+	Early 1970s Dennis Ritchie created C language
+	1979	Bjarne Stroustrup created C with Classes
+	1983	Bjarne changed name to C++
+	1989	First commercial release of C++ language
+	
+	CLASSICAL C++
+	1998	C++98 Standard
+	2003	C++03 Std
+	
+	MODERN C++
+	2011	C++11 Std - added new features
+	2014	C++14 Std - smaller changes
+	2017	C++17 Std - simplification
+	
+	2020	C++20 Std (course predates this change)
+	
+C++ uses .cpp and .h file types
+
+C++ Build Process:
+	Source Code (one or many files, usually .cpp or .h)
+	Complier translates source to object code (binary - .o or .obj in Win)
+	Linker - links our code with other libraries (creates executable, .exe in Win, nothing in Linux/Mac)

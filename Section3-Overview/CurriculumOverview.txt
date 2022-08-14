@@ -1,0 +1,27 @@
+C++ or CPP is one of the most complicated programming languages
+Most programming languages have the same basic tools
+
+Unreal Engine, Boost frameworks, etc all use C++
+
+Covering all the basic programming topics using C++
+Procedural Programming:
+- Structure of a C++ program
+- Variables and Constants
+- Arrays and Vectors
+- Strings in C++
+- Expressions, Statements, and Operators
+- Statements and Operators
+- Control Flow
+- Functions
+- Pointers and References
+Object-oriented Programming
+- classes and objects
+- operator overloading
+- inheritance
+- polymorphism
+- smart pointers
+- The Standard Template Library (STL)
+- I/O Streams
+- Exception Handling
+
+Will use Section Challenges and Quizzes to reinforce learning

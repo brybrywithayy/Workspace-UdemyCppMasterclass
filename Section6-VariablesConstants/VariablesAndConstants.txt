@@ -1,0 +1,196 @@
+VARIABLES AND CONSTANTS
+
+What is a Variable?
+- A variable is an abstraction for a memory location
+	- low level languages require specific allocation of data to memory locations (blocks) in RAM
+		Ex: move 21 to location 1003
+
+	- assigning (or binding) values to variables is used in place of this in high-level languages
+		Ex: assign 21 to age
+		- this approach allows meaningful names instead of memory locations,
+		increases readability and reduces errors.
+	- ALL variables have a type and a value.
+		- type is their category (integer, float, bool, etc)
+			- determines what type of data is valid to store
+		- value is the contents (what is assigned or bound to the variable name)
+			- Values CAN be changed
+	- ALL variables must be declared before they are used.
+		Ex:
+			int age;
+			age = 21;
+		
+
+Declaring variables
+	- VariableType variable_name;
+	- int, double, string, char
+	- can create our own type (OOP)
+
+Naming Conventions
+	- can contain letters, numbers or underscores
+	- must begin with letter or underscore (cannot begin with a number)
+	- cannot use reserved words
+	- cannot redeclare a name within the same scope
+
+	BE CONSISTENT IN YOUR STYLE
+	- myVariableName vs my_variable_name
+	- avoid beginning with underscores
+	- use meaningful names! (not too short or long)
+	- declare variables as close to where they are used as possible
+
+Initializing Variables (C)
+	EXAMPLES:
+		int age; // uninitialized (ALWAYS INITIALIZE TO SOMETHING, EVEN JUST 0)
+
+		int age = 21;  // C-like initialization
+		int age (21);  // constructor initialization
+		int age {21};  // C++11 list initialization syntax
+
+Scope of Variables
+	- variables are visible/accessible within the blocks that contain them and any subordinate blocks
+	- local variables are contained within functions
+	- global variables are available to the entire program
+		- GLOBAL variables are automatically initialized to 0
+		- can be changed from anywhere in the program (could be a problem)
+
+C++ Primitive Types
+	- Also called fundamental types
+	- are implemented directly by the language
+	- size and precision is usually compiler-dependent
+		#include <climits>
+	
+	Type sizes expressed in bits
+		- more bits = more values that can be represented = more storage needed
+		Note: The values in the table below are a maximum character size
+			Real number values are positive and negative centered around 0
+				EX: Char is 1 byte, 8 bits and thus can hold 256 characters
+					The range however, is -128 to 127
+
+		COMMON DATATYPE SIZES
+		Bits		Values
+		8 bits		256 (2^8)
+		16 bits	65,536 (2^16)
+		32 bits	4,294,967,296 (2^32) (over 4 billion)			
+		64 bits	18,446,744,073,709,551,615 (2^64) (over 18 billion-billion)
+
+	- Character types
+		- used to represent characters 'A', 'x', '@'
+		- wider types are used to represent wider character sets like UNICODE-8
+
+		Type Name	Size/Precision
+		char		at least 8 bits (1 byte)
+		char16_t	at least 16 bits
+		char32_t	at least 32 bits
+		wchar_t	can support beyond
+
+	- Integer types (signed and unsigned)
+		- used to represent whole numbers
+		- signed and unsigned versions (meaning positive and negative numbers)
+			- signed are default
+			- use unsigned keyword to declare unsigned ints
+		- also possible to store signed and unsigned ints within char type!
+		
+			Type Names	Size/Precision
+		Signed (by default)	
+			short int	at least 16 bits
+			int		at least 16 bits
+			long int	at least 32 bits
+			long long int	at least 64 bits
+
+		Unsigned (zero or pos numbers)
+			short int	at least 16 bits
+			int		at least 16 bits
+			long int	at least 32 bits
+			long long int	at least 64 bits
+
+		NOTE: if you are storing a number that is too large for the precision of a datatype
+		you will cause an overflow (where an 8 bit char has 256+1 taking it back around to 0)
+
+	- Floating-point types
+		- used to represent non-integer numbers (real numbers with decimals)
+			- approximations of real numbers
+			- Pi could never be stored in its entirety
+		- represented by mantissa and exponent (scientific notation)
+			- precision = digits in mantissa
+		- precision and size are compiler dependent
+
+			Type Names	Size/Precision Est.		Typical Range
+			float		7 decimal digits		1.2x10*-38 to 3.4x10^38
+			double		15 decimal digits		2.2x10^-308 to 1.8x10^308
+			long double	19 decimal digits		3.3x10^-4932 to 1.2x10^4932
+	- Boolean types
+		- represents true and false values
+		- zero = false
+		- non-zero = true
+
+			Type Name	Size/Precision
+			bool		8 bits (usually) - will only be "true" or "false"
+
+sizeof Operator
+
+	- determines the size of bytes of a type or variable
+	- SYNTAX Examples
+		sizeof(int)
+		sizeof(double)
+		sizeof(variable_name)	OR	sizeof variable_name
+
+	- Where does the operator retrieve this information?
+		- <climits> and <cfloat> files
+			- these contain the size and precision information about your implementation of C++
+			- Also contains constants to represent the max and min values for each type
+				INT_MAX
+				INT_MIN
+				LONG_MAX
+				LONG_MIN
+				FLT_MAX
+				FLT_MIN
+
+Constants
+	- just like variables
+		- have names
+		- are usually of a specific datatype
+		- occupy same amount of space as their type
+		*** value cannot be changed once they are declared!
+		
+	- Types of Constants
+		- Literal constants
+			- most obvious kind of constant
+				EX:
+					x = 12;
+					y = 1.56;
+					name = "Frank";
+					middle_initial = 'J';
+			- Have types based on naming convention
+				- explicit typing with suffixes
+					12	integer
+					12U	unsigned int
+					12L	long int
+					12LL	long long int
+					12.1	double (note that double is the default)
+					12.1F	float
+					12.1L	long double
+					
+				- Character Literal Constants (Escape codes)
+					\n	newline
+					\r	return
+					\t	tab
+					\b	backspace
+					\'	single quote
+					\"	double quote
+					\\	backslash
+				
+		- Declared constants
+			- use keyword const
+			- EX:
+				const double pi {3.1415926};
+				const int months_in_year {12};
+		- Constant expressions
+			- use keyword constexpr
+		- Enumerated constants
+			- use keyword enum
+		- Defined constants
+			- use directive #define
+				- acts as a blind find and replace for the preprocessor
+				- may cause datatype mismatch errors
+			- EX:
+				#define pi 3.1415926
+			- DO NOT USE THESE IN MODERN C++
